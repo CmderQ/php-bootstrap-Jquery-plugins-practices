@@ -16,4 +16,5 @@ $hj = QueryList::Query('http://mobile.csdn.net/',array("url"=>array('.unit h1 a'
 $data = $hj->getData(function($x){
     return $x['url'];
 });
+
 print_r($data);
