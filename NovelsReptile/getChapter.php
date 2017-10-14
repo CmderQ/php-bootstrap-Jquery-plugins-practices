@@ -6,6 +6,7 @@
  * Date:      2017/10/14
  * Time:      22:21
  * 采集一篇文章页的文章标题、发布日期和文章内容并实现图片本地化
+ * 来源：https://querylist.cc/
  */
 require 'QueryList/vendor/autoload.php';
 
@@ -35,6 +36,7 @@ $data = $ql->getData(function ($item) {
     $content = QueryList::html($item['content']);
     $content->find('img')->map(function ($img) {
         $src = 'http://cms.querylist.cc' . $img->src;
+        //本地图片存储路径
         $localSrc = 'image/' . md5($src) . '.jpg';
         $stream = file_get_contents($src);
         file_put_contents($localSrc, $stream);

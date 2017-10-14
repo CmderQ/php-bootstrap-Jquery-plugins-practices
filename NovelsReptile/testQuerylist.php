@@ -13,6 +13,7 @@ use QL\QueryList;
 /**
  * 测试用例来自官网 https://querylist.cc/
  */
+
 ////采集某页面所有的图片
 //$data = QueryList::get('http://cms.querylist.cc/bizhi/453.html')->find('img')->attrs('src');
 ////打印结果
@@ -28,6 +29,7 @@ use QL\QueryList;
 //    // 采集所有a标签的文本内容
 //    'text' => ['a','text']
 //])->query()->getData();
+
 ////打印结果
 //print_r($data->all());
 
@@ -45,5 +47,6 @@ $data = QueryList::get('http://cms.querylist.cc/google/list_1.html')->rules([
     }],
     'text' => ['h2>a', 'text']
 ])->range('.cate_list li')->query()->getData();
+
 //打印结果
 print_r($data->all());
